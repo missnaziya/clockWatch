@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* .main{
+            height : 57px;
+         width: 205px;
+         padding: 5px;
+         border-radius: 35px;
+         margin: 300px  600px;
+        }   */
+        *{
+            background: linear-gradient(to right, rgb(102, 221, 241), #1052e0 );
+
+        }
+        #container{
+         height : 116px;
+         width: 505px;
+         border: 2px solid black;
+         border-radius: 35px;
+         /* padding: 30px 30px; */
+         margin: 230px  400px;
+         
+         background: white;
+         align-items: center;
+         display: flex;
+         justify-content: center;
+    }
+    p{
+        font-size: xxx-large;
+        font-weight: 900;
+        background: white;
+
+    }
+ 
+
+
+
+
+
+    </style>
+</head>
+<body>
+    
+   <div class="main">
+    <div id="container"> 
+        <p id="clock"></p>
+    </div>
+   </div>
+
+
+
+
+<script>
+
+// setInterval( show(){
+    
+    
+//     let today = new Date();
+    
+//     var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+//     
+// }
+
+// , 1000)
+
+
+function showTime(){
+    let date = new Date();
+    let hour = date.getHours();
+    let minute = date.getMinutes();
+    let second = date.getSeconds();
+    let sesion = "AM";
+
+    if(hour < 12){
+        session = "AM";
+    }
+     else{
+        session = "PM";
+     }
+
+     if(hour>12){
+        hour = `0 ${hour-12}`;
+     }
+     if(minute<10){
+        minute = `0 ${minute}`;
+     }
+     if(second<10){
+        second = `0 ${second}`;
+     }
+     document.querySelector('#clock').innerHTML = `${hour} : ${minute} : ${second}  ${session}`
+}
+setInterval(showTime, 1000);
+
+
+
+</script>
+
+
+</body>
+</html>
